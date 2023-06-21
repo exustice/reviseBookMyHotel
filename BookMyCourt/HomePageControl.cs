@@ -38,15 +38,12 @@ namespace BookMyCourt
 
         private void btnShowDetails_Click(object sender, EventArgs e)
         {
-
-
-            btnShowDetails = (Button)sender;
-            // Get the clicked button
-            string hotelName = btnShowDetails.Tag.ToString(); // Retrieve the hotel name from the button's tag
+            Button btnShowDetails = (Button)sender;
+            string hotelName = btnShowDetails.Tag.ToString();
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = "SELECT HotelAddress, HotelStar, HotelOffers, HotelImage FROM Hotels WHERE HotelName = @HotelName";
+                string query = "SELECT HotelName, HotelAddress, HotelStar, HotelOffers, HotelImage FROM Hotels WHERE HotelName = @HotelName";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
@@ -57,103 +54,88 @@ namespace BookMyCourt
                     {
                         if (reader.Read())
                         {
-                            string hotelAddress = reader.GetString(0);
-                            int hotelStar = reader.GetInt32(1);
-                            string hotelOffers = reader.GetString(2);
-                            byte[] hotelImageBytes = (byte[])reader.GetValue(3);
+                            string hotelAddress = reader.GetString(1);
+                            int hotelStar = reader.GetInt32(2);
+                            string hotelOffers = reader.GetString(3);
+                            byte[] hotelImageBytes = (byte[])reader.GetValue(4);
                             Image hotelImage = ConvertByteArrayToImage(hotelImageBytes);
 
-                            //create new form upon clicking show details
+                            // Create a new form to display hotel details
                             Form hotelDetailsForm = new Form();
                             hotelDetailsForm.Text = hotelName + " Details";
-                            hotelDetailsForm.AutoSize = true; // Set AutoSize property to true
-                            hotelDetailsForm.AutoSizeMode = AutoSizeMode.GrowAndShrink; // Set AutoSizeMode property to GrowAndShrink
                             hotelDetailsForm.StartPosition = FormStartPosition.CenterScreen; // Set the form's position to the center of the screen
-                            hotelDetailsForm.FormBorderStyle = FormBorderStyle.FixedSingle; // Set the form's border style to FixedSingle (cannot be resized)
-                            hotelDetailsForm.MaximizeBox = false; // Disable maximize button
 
-
-
-                            // Create labels to display the full details of the hotel
+                            // Create controls to display hotel details
                             PictureBox pbHotelImage = new PictureBox();
                             pbHotelImage.Image = hotelImage;
                             pbHotelImage.SizeMode = PictureBoxSizeMode.StretchImage;
                             pbHotelImage.Width = 200;
                             pbHotelImage.Height = 150;
-                            pbHotelImage.Location = new Point(100, 10);
+                            pbHotelImage.Location = new Point(10, 10);
+                            hotelDetailsForm.Controls.Add(pbHotelImage);
 
-                            // Create labels to display the full details of the hotel
                             Label lblHotelNameTitle = new Label();
-                            lblHotelNameTitle.Text = "HOTEL NAME";
+                            lblHotelNameTitle.Text = "Hotel Name:";
                             lblHotelNameTitle.Location = new Point(10, 170);
                             lblHotelNameTitle.AutoSize = true;
                             lblHotelNameTitle.Font = new Font(lblHotelNameTitle.Font, FontStyle.Bold);
-                            lblHotelNameTitle.TextAlign = ContentAlignment.MiddleCenter; // Align text at the center
+                            lblHotelNameTitle.TextAlign = ContentAlignment.MiddleLeft; // Align text to the left
                             hotelDetailsForm.Controls.Add(lblHotelNameTitle);
 
-                            Label lblHotelName = new Label();
-                            lblHotelName.Text = hotelName;
-                            lblHotelName.Location = new Point(10, lblHotelNameTitle.Bottom + 5);
-                            lblHotelName.AutoSize = true;
-                            lblHotelName.Font = new Font(lblHotelName.Font.FontFamily, lblHotelName.Font.Size);
-                            lblHotelName.TextAlign = ContentAlignment.MiddleCenter; // Align text at the center
-                            hotelDetailsForm.Controls.Add(lblHotelName);
+                            TextBox txtHotelName = new TextBox();
+                            txtHotelName.Text = hotelName;
+                            txtHotelName.Location = new Point(lblHotelNameTitle.Right + 10, lblHotelNameTitle.Top);
+                            txtHotelName.AutoSize = true;
+                            txtHotelName.Multiline = false;
+                            txtHotelName.ReadOnly = true;
+                            txtHotelName.BorderStyle = BorderStyle.None;
+                            txtHotelName.BackColor = hotelDetailsForm.BackColor; // Set the background color to match the form's background
+                            hotelDetailsForm.Controls.Add(txtHotelName);
+
+                            Label titleAddress = new Label();
+                            titleAddress.Text = "Address:";
+                            titleAddress.Location = new Point(10, lblHotelNameTitle.Bottom + 10);
+                            titleAddress.AutoSize = true;
+                            titleAddress.Font = new Font(titleAddress.Font, FontStyle.Bold);
+                            titleAddress.TextAlign = ContentAlignment.MiddleLeft; // Align text to the left
+                            hotelDetailsForm.Controls.Add(titleAddress);
+
+                            TextBox tbHotelAddress = new TextBox();
+                            tbHotelAddress.Multiline = true;
+                            tbHotelAddress.Text = hotelAddress;
+                            tbHotelAddress.ReadOnly = true;
+                            tbHotelAddress.ScrollBars = ScrollBars.Vertical;
+                            tbHotelAddress.Width = 200;
+                            tbHotelAddress.Height = 40;
+                            tbHotelAddress.Location = new Point(10, titleAddress.Bottom + 5); // Adjust the Y position based on the title's bottom position
+                            hotelDetailsForm.Controls.Add(tbHotelAddress);
 
 
-                            Label lblHotelAddressTitle = new Label();
-                            lblHotelAddressTitle.Text = "HOTEL ADDRESS";
-                            lblHotelAddressTitle.Location = new Point(10, lblHotelName.Bottom + 10);
-                            lblHotelAddressTitle.AutoSize = true;
-                            lblHotelAddressTitle.Font = new Font(lblHotelAddressTitle.Font, FontStyle.Bold);
-                            lblHotelAddressTitle.TextAlign = ContentAlignment.MiddleCenter; // Align text at the center
-                            hotelDetailsForm.Controls.Add(lblHotelAddressTitle);
 
-                            Label lblHotelAddress = new Label();
-                            lblHotelAddress.Text = hotelAddress;
-                            lblHotelAddress.Location = new Point(10, lblHotelAddressTitle.Bottom + 5);
-                            lblHotelAddress.AutoSize = true;
-                            lblHotelAddress.TextAlign = ContentAlignment.MiddleCenter; // Align text at the center
-                            hotelDetailsForm.Controls.Add(lblHotelAddress);
-
-                            Label lblHotelStarTitle = new Label();
-                            lblHotelStarTitle.Text = "HOTEL RATINGS";
-                            lblHotelStarTitle.Location = new Point(10, lblHotelAddress.Bottom + 10);
-                            lblHotelStarTitle.AutoSize = true;
-                            lblHotelStarTitle.Font = new Font(lblHotelStarTitle.Font, FontStyle.Bold);
-                            lblHotelStarTitle.TextAlign = ContentAlignment.MiddleCenter; // Align text at the center
-                            hotelDetailsForm.Controls.Add(lblHotelStarTitle);
 
                             Label lblHotelStar = new Label();
-                            lblHotelStar.Text = hotelStar.ToString() + " STARS";
-                            lblHotelStar.Location = new Point(10, lblHotelStarTitle.Bottom + 5);
-                            lblHotelStar.AutoSize = true;
-                            lblHotelStar.TextAlign = ContentAlignment.MiddleCenter; // Align text at the center
+                            lblHotelStar.Text = "Star Rating: " + hotelStar + " stars";
+                            lblHotelStar.Location = new Point(10, tbHotelAddress.Bottom + 10);
+                            lblHotelStar.Font = new Font(lblHotelStar.Font, FontStyle.Bold); // Set the font to bold
                             hotelDetailsForm.Controls.Add(lblHotelStar);
 
                             Label lblHotelOffersTitle = new Label();
-                            lblHotelOffersTitle.Text = "HOTEL OFFERS";
+                            lblHotelOffersTitle.Text = "Offers:";
                             lblHotelOffersTitle.Location = new Point(10, lblHotelStar.Bottom + 10);
                             lblHotelOffersTitle.AutoSize = true;
                             lblHotelOffersTitle.Font = new Font(lblHotelOffersTitle.Font, FontStyle.Bold);
-                            lblHotelOffersTitle.TextAlign = ContentAlignment.MiddleCenter; // Align text at the center
+                            lblHotelOffersTitle.TextAlign = ContentAlignment.MiddleLeft; // Align text to the left
                             hotelDetailsForm.Controls.Add(lblHotelOffersTitle);
 
-                            Label lblHotelOffers = new Label();
-                            lblHotelOffers.Text = "" + hotelOffers;
-                            lblHotelOffers.Location = new Point(10, lblHotelOffersTitle.Bottom + 5);
-                            lblHotelOffers.AutoSize = true;
-                            //lblHotelOffers.TextAlign = ContentAlignment.MiddleCenter; // Align text at the center
-                            hotelDetailsForm.Controls.Add(lblHotelOffers);
+                            ListBox listBoxHotelOffers = new ListBox();
+                            listBoxHotelOffers.Items.AddRange(hotelOffers.Split('\n')); // Split the offers string by newline and add each item to the ListBox
+                            listBoxHotelOffers.Location = new Point(lblHotelOffersTitle.Left, lblHotelOffersTitle.Bottom + 5);
+                            listBoxHotelOffers.Width = 200;
+                            listBoxHotelOffers.Height = 100;
+                            hotelDetailsForm.Controls.Add(listBoxHotelOffers);
 
-                            // Add the picture box and labels to the form
-                            hotelDetailsForm.Controls.Add(pbHotelImage);
-                            hotelDetailsForm.Controls.Add(lblHotelName);
-                            hotelDetailsForm.Controls.Add(lblHotelAddress);
-                            hotelDetailsForm.Controls.Add(lblHotelStar);
-                            hotelDetailsForm.Controls.Add(lblHotelOffers);
-
-                            
-                            // ...
+                            // Adjust form size based on the controls' dimensions
+                            hotelDetailsForm.ClientSize = new Size(230, listBoxHotelOffers.Bottom + 10);
 
                             // Show the hotel details form
                             hotelDetailsForm.ShowDialog();
@@ -162,13 +144,18 @@ namespace BookMyCourt
                 }
             }
         }
+    
 
 
 
 
 
 
-        private void LoadHotels()
+
+
+
+
+    private void LoadHotels()
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
