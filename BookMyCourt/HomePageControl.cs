@@ -64,6 +64,7 @@ namespace BookMyCourt
                             Form hotelDetailsForm = new Form();
                             hotelDetailsForm.Text = hotelName + " Details";
                             hotelDetailsForm.StartPosition = FormStartPosition.CenterScreen; // Set the form's position to the center of the screen
+                            hotelDetailsForm.MaximizeBox = false;
 
                             // Create controls to display hotel details
                             PictureBox pbHotelImage = new PictureBox();
@@ -79,18 +80,20 @@ namespace BookMyCourt
                             lblHotelNameTitle.Location = new Point(10, 170);
                             lblHotelNameTitle.AutoSize = true;
                             lblHotelNameTitle.Font = new Font(lblHotelNameTitle.Font, FontStyle.Bold);
-                            lblHotelNameTitle.TextAlign = ContentAlignment.MiddleLeft; // Align text to the left
+                            lblHotelNameTitle.TextAlign = ContentAlignment.MiddleLeft;
                             hotelDetailsForm.Controls.Add(lblHotelNameTitle);
 
-                            TextBox txtHotelName = new TextBox();
-                            txtHotelName.Text = hotelName;
+                            RichTextBox txtHotelName = new RichTextBox();
+                            txtHotelName.Text =  hotelName;
                             txtHotelName.Location = new Point(lblHotelNameTitle.Right + 10, lblHotelNameTitle.Top);
-                            txtHotelName.AutoSize = true;
-                            txtHotelName.Multiline = false;
+                            txtHotelName.Width = 200;
+                            txtHotelName.Height = 40;
                             txtHotelName.ReadOnly = true;
                             txtHotelName.BorderStyle = BorderStyle.None;
-                            txtHotelName.BackColor = hotelDetailsForm.BackColor; // Set the background color to match the form's background
+                            txtHotelName.BackColor = hotelDetailsForm.BackColor;
+                            txtHotelName.WordWrap = true; // Enable word wrapping
                             hotelDetailsForm.Controls.Add(txtHotelName);
+
 
                             Label titleAddress = new Label();
                             titleAddress.Text = "Address:";
@@ -107,14 +110,14 @@ namespace BookMyCourt
                             tbHotelAddress.ScrollBars = ScrollBars.Vertical;
                             tbHotelAddress.Width = 200;
                             tbHotelAddress.Height = 40;
+                            tbHotelAddress.BorderStyle = BorderStyle.None;
                             tbHotelAddress.Location = new Point(10, titleAddress.Bottom + 5); // Adjust the Y position based on the title's bottom position
                             hotelDetailsForm.Controls.Add(tbHotelAddress);
 
 
 
-
                             Label lblHotelStar = new Label();
-                            lblHotelStar.Text = "Star Rating: " + hotelStar + " stars";
+                            lblHotelStar.Text = "Star Rating: [" + hotelStar + "] stars";
                             lblHotelStar.Location = new Point(10, tbHotelAddress.Bottom + 10);
                             lblHotelStar.Font = new Font(lblHotelStar.Font, FontStyle.Bold); // Set the font to bold
                             hotelDetailsForm.Controls.Add(lblHotelStar);
