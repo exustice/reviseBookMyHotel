@@ -25,6 +25,8 @@ namespace BookMyCourt
         }
 
 
+
+
         private Image ConvertByteArrayToImage(byte[] byteArray)
         {
             using (MemoryStream ms = new MemoryStream(byteArray))
@@ -305,6 +307,8 @@ namespace BookMyCourt
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+
+
             string searchText = txtSearch.Text.Trim();
 
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -390,6 +394,16 @@ namespace BookMyCourt
                             hotelPanel.Controls.Add(lblHotelOffers);
                             hotelPanel.Controls.Add(pbHotelImage);
                             hotelPanel.Controls.Add(btnCheckHotel);
+
+                            btnShowDetails = new Button();
+                            btnShowDetails.Text = "Show Details";
+                            btnShowDetails.Tag = hotelName; // Store the hotel name as the button's tag
+                            btnShowDetails.Click += btnShowDetails_Click;
+                            btnShowDetails.AutoSize = true;
+                            btnShowDetails.Location = new Point(572, 120);
+                            btnShowDetails.Font = new Font(lblHotelOffers.Font.FontFamily, 12);
+
+                            hotelPanel.Controls.Add(btnShowDetails);
 
                             // Add the panel to the FlowLayoutPanel
                             flowLayoutPanelHotels.Controls.Add(hotelPanel);
