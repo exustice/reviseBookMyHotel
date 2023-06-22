@@ -318,6 +318,13 @@ namespace BookMyCourt
                 return; // Exit the event handler without proceeding
             }
 
+            else if (endDate == startDate) 
+            {
+
+                MessageBox.Show("End date cannot be the same as start date. Please select a valid end date.");
+                return; // Exit the event handler without proceeding
+            }
+
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 using (SqlCommand command = new SqlCommand(query, connection))
