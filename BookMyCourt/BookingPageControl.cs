@@ -25,6 +25,8 @@ namespace BookMyCourt
             datePicker.MinDate = DateTime.Today;
             dtpEndDate.MinDate = DateTime.Today;
             nameTextBox.Click += nameTextBox_Click;
+            nameTextBox.TextChanged += nameTextBox_TextChanged;
+
 
             lblPrice.Location = new Point(lblTotalPrice.Right + 10, lblTotalPrice.Top);
 
@@ -429,11 +431,8 @@ namespace BookMyCourt
             lblTotalPrice.Visible = false;
             btnSubmit.Visible = false;
 
-            // Subscribe to the TextChanged event of the hotel name textbox
-            nameTextBox.TextChanged += nameTextBox_TextChanged;
 
-            // Set the initial state of the next button
-            stp1NextButton.Enabled = false;
+          
         }
 
         //bed type with picture
@@ -528,18 +527,23 @@ namespace BookMyCourt
         private void stp1NextButton_Click(object sender, EventArgs e)
         {
             currentStep = 2;
-            // Move to the next step only if the hotel name is not empty
-            if (!string.IsNullOrEmpty(nameTextBox.Text))
+            // Check if the hotel name is empty
+            if (string.IsNullOrWhiteSpace(nameTextBox.Text))
             {
-                // Code to proceed to the next step
-                // For example, hide step 1 controls and show step 2 controls
+                MessageBox.Show("Please select a hotel first.");
+                return; // Exit the event handler without proceeding
+            }
+
+            else {
                 ShowStep2();
             }
+            
         }
 
         private void stp2BackButton_Click(object sender, EventArgs e)
         {
             currentStep = 1;
+            stp1NextButton.Enabled = true;
             ShowStep1();
         }
 
@@ -595,8 +599,8 @@ namespace BookMyCourt
 
         private void nameTextBox_TextChanged(object sender, EventArgs e)
         {
-            // Enable or disable the next button based on the hotel name textbox value
-            stp1NextButton.Enabled = !string.IsNullOrEmpty(nameTextBox.Text);
+            // Enable or disable stp1NextButton based on the presence of text in nameTextBox
+            stp1NextButton.Enabled = !string.IsNullOrWhiteSpace(nameTextBox.Text);
         }
     }
 }
