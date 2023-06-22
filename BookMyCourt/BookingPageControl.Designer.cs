@@ -43,7 +43,7 @@
             this.generateButton = new System.Windows.Forms.Button();
             this.roomTypelbl = new System.Windows.Forms.Label();
             this.bedTypelbl = new System.Windows.Forms.Label();
-            this.totalPricelbl = new System.Windows.Forms.Label();
+            this.lblTotalPrice = new System.Windows.Forms.Label();
             this.lblPrice = new System.Windows.Forms.Label();
             this.cmbRoomType = new System.Windows.Forms.ComboBox();
             this.cmbBedType = new System.Windows.Forms.ComboBox();
@@ -68,7 +68,7 @@
             this.idlbl.AutoSize = true;
             this.idlbl.CausesValidation = false;
             this.idlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idlbl.Location = new System.Drawing.Point(-4, 127);
+            this.idlbl.Location = new System.Drawing.Point(334, 147);
             this.idlbl.Name = "idlbl";
             this.idlbl.Size = new System.Drawing.Size(115, 20);
             this.idlbl.TabIndex = 1;
@@ -78,7 +78,7 @@
             // 
             this.contactlbl.AutoSize = true;
             this.contactlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.contactlbl.Location = new System.Drawing.Point(-5, 245);
+            this.contactlbl.Location = new System.Drawing.Point(329, 225);
             this.contactlbl.Name = "contactlbl";
             this.contactlbl.Size = new System.Drawing.Size(125, 20);
             this.contactlbl.TabIndex = 3;
@@ -116,7 +116,7 @@
             // 
             // ContactTextBox
             // 
-            this.ContactTextBox.Location = new System.Drawing.Point(-1, 208);
+            this.ContactTextBox.Location = new System.Drawing.Point(308, 207);
             this.ContactTextBox.Name = "ContactTextBox";
             this.ContactTextBox.Size = new System.Drawing.Size(160, 20);
             this.ContactTextBox.TabIndex = 17;
@@ -165,9 +165,9 @@
             // 
             // datePicker
             // 
-            this.datePicker.Location = new System.Drawing.Point(285, 162);
+            this.datePicker.Location = new System.Drawing.Point(261, 162);
             this.datePicker.Name = "datePicker";
-            this.datePicker.Size = new System.Drawing.Size(192, 20);
+            this.datePicker.Size = new System.Drawing.Size(255, 20);
             this.datePicker.TabIndex = 29;
             // 
             // nameTextBox
@@ -177,11 +177,12 @@
             this.nameTextBox.ReadOnly = true;
             this.nameTextBox.Size = new System.Drawing.Size(255, 20);
             this.nameTextBox.TabIndex = 31;
+            this.nameTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nameTextBox.Click += new System.EventHandler(this.nameTextBox_Click);
             // 
             // generateButton
             // 
-            this.generateButton.Location = new System.Drawing.Point(0, 163);
+            this.generateButton.Location = new System.Drawing.Point(474, 124);
             this.generateButton.Name = "generateButton";
             this.generateButton.Size = new System.Drawing.Size(73, 23);
             this.generateButton.TabIndex = 32;
@@ -209,15 +210,15 @@
             this.bedTypelbl.TabIndex = 35;
             this.bedTypelbl.Text = "Bed Type";
             // 
-            // totalPricelbl
+            // lblTotalPrice
             // 
-            this.totalPricelbl.AutoSize = true;
-            this.totalPricelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalPricelbl.Location = new System.Drawing.Point(555, 300);
-            this.totalPricelbl.Name = "totalPricelbl";
-            this.totalPricelbl.Size = new System.Drawing.Size(87, 20);
-            this.totalPricelbl.TabIndex = 37;
-            this.totalPricelbl.Text = "Total Price:";
+            this.lblTotalPrice.AutoSize = true;
+            this.lblTotalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalPrice.Location = new System.Drawing.Point(268, 321);
+            this.lblTotalPrice.Name = "lblTotalPrice";
+            this.lblTotalPrice.Size = new System.Drawing.Size(87, 20);
+            this.lblTotalPrice.TabIndex = 37;
+            this.lblTotalPrice.Text = "Total Price:";
             // 
             // lblPrice
             // 
@@ -257,9 +258,9 @@
             // 
             // dtpEndDate
             // 
-            this.dtpEndDate.Location = new System.Drawing.Point(285, 208);
+            this.dtpEndDate.Location = new System.Drawing.Point(261, 208);
             this.dtpEndDate.Name = "dtpEndDate";
-            this.dtpEndDate.Size = new System.Drawing.Size(192, 20);
+            this.dtpEndDate.Size = new System.Drawing.Size(255, 20);
             this.dtpEndDate.TabIndex = 43;
             this.dtpEndDate.ValueChanged += new System.EventHandler(this.dtpEndDate1);
             // 
@@ -267,7 +268,7 @@
             // 
             this.ReservationIDTextBox.BackColor = System.Drawing.Color.White;
             this.ReservationIDTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ReservationIDTextBox.Location = new System.Drawing.Point(0, 101);
+            this.ReservationIDTextBox.Location = new System.Drawing.Point(309, 123);
             this.ReservationIDTextBox.Name = "ReservationIDTextBox";
             this.ReservationIDTextBox.Size = new System.Drawing.Size(159, 24);
             this.ReservationIDTextBox.TabIndex = 44;
@@ -284,7 +285,7 @@
             // 
             // stp1NextButton
             // 
-            this.stp1NextButton.Location = new System.Drawing.Point(631, 346);
+            this.stp1NextButton.Location = new System.Drawing.Point(659, 341);
             this.stp1NextButton.Name = "stp1NextButton";
             this.stp1NextButton.Size = new System.Drawing.Size(134, 24);
             this.stp1NextButton.TabIndex = 46;
@@ -294,7 +295,7 @@
             // 
             // stp2BackButton
             // 
-            this.stp2BackButton.Location = new System.Drawing.Point(32, 342);
+            this.stp2BackButton.Location = new System.Drawing.Point(25, 346);
             this.stp2BackButton.Name = "stp2BackButton";
             this.stp2BackButton.Size = new System.Drawing.Size(134, 24);
             this.stp2BackButton.TabIndex = 47;
@@ -315,7 +316,7 @@
             // 
             // stp2NextButton
             // 
-            this.stp2NextButton.Location = new System.Drawing.Point(631, 342);
+            this.stp2NextButton.Location = new System.Drawing.Point(659, 341);
             this.stp2NextButton.Name = "stp2NextButton";
             this.stp2NextButton.Size = new System.Drawing.Size(134, 24);
             this.stp2NextButton.TabIndex = 49;
@@ -326,7 +327,7 @@
             // 
             // stp3BackButton
             // 
-            this.stp3BackButton.Location = new System.Drawing.Point(32, 342);
+            this.stp3BackButton.Location = new System.Drawing.Point(25, 342);
             this.stp3BackButton.Name = "stp3BackButton";
             this.stp3BackButton.Size = new System.Drawing.Size(134, 24);
             this.stp3BackButton.TabIndex = 50;
@@ -399,7 +400,7 @@
             this.Controls.Add(this.cmbBedType);
             this.Controls.Add(this.cmbRoomType);
             this.Controls.Add(this.lblPrice);
-            this.Controls.Add(this.totalPricelbl);
+            this.Controls.Add(this.lblTotalPrice);
             this.Controls.Add(this.bedTypelbl);
             this.Controls.Add(this.roomTypelbl);
             this.Controls.Add(this.nameTextBox);
@@ -437,7 +438,7 @@
         private System.Windows.Forms.Button generateButton;
         private System.Windows.Forms.Label roomTypelbl;
         private System.Windows.Forms.Label bedTypelbl;
-        private System.Windows.Forms.Label totalPricelbl;
+        private System.Windows.Forms.Label lblTotalPrice;
         private System.Windows.Forms.Label lblPrice;
         private System.Windows.Forms.ComboBox cmbRoomType;
         private System.Windows.Forms.ComboBox cmbBedType;

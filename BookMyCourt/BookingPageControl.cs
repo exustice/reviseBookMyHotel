@@ -16,7 +16,7 @@ namespace BookMyCourt
     {
         public string reserveID { get; set; }
 
-
+        private int currentStep = 1;
 
         public BookingPageControl()
         {
@@ -26,6 +26,7 @@ namespace BookMyCourt
             dtpEndDate.MinDate = DateTime.Today;
             nameTextBox.Click += nameTextBox_Click;
 
+            lblPrice.Location = new Point(lblTotalPrice.Right + 10, lblTotalPrice.Top);
 
 
             // Set the time interval to 1 hour
@@ -67,14 +68,14 @@ namespace BookMyCourt
         {
             DateTime roundedTime = new DateTime(dtpStartTime.Value.Year, dtpStartTime.Value.Month, dtpStartTime.Value.Day, dtpStartTime.Value.Hour, 0, 0);
             dtpStartTime.Value = roundedTime;
-            UpdatePriceLabel();
+            
         }
 
         private void dtpEndTime_ValueChanged(object sender, EventArgs e)
         {
             DateTime roundedTime = new DateTime(dtpEndTime.Value.Year, dtpEndTime.Value.Month, dtpEndTime.Value.Day, dtpEndTime.Value.Hour, 0, 0);
             dtpEndTime.Value = roundedTime;
-            UpdatePriceLabel();
+           
         }
 
         private void generateButton_Click(object sender, EventArgs e)
@@ -85,16 +86,24 @@ namespace BookMyCourt
 
         private void cmbRoomType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            UpdatePriceLabel();
+            if (currentStep == 2)
+                UpdatePriceLabel();
         }
 
         private void cmbBedType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            UpdatePriceLabel();
+            if (currentStep == 2)
+                UpdatePriceLabel();
         }
 
         private void UpdatePriceLabel()
         {
+            if (currentStep != 2)
+            {
+                lblPrice.Visible = false;
+                return;
+            }
+
             string roomType = cmbRoomType.SelectedItem?.ToString();
             string bedType = cmbBedType.SelectedItem?.ToString();
 
@@ -129,7 +138,7 @@ namespace BookMyCourt
                 // Format the converted price as Philippine Peso
                 string formattedPrice = FormatPriceAsPhilippinePeso(convertedPrice);
 
-                // Update the price label
+                lblPrice.Visible = true;
                 lblPrice.Text = formattedPrice;
             }
         }
@@ -400,7 +409,7 @@ namespace BookMyCourt
             ContactTextBox.Visible = false;
             contactlbl.Visible = false;
             generateButton.Visible = false;
-            totalPricelbl.Visible = false;
+            lblTotalPrice.Visible = false;
             btnSubmit.Visible = false;
         }
 
@@ -433,13 +442,14 @@ namespace BookMyCourt
             cmbBedType.Visible = true;
             bedTypelbl.Visible = true;
             cmbRoomType.SelectedItem = "Premium"; // Set the room type to "Premium"
+            UpdatePriceLabel();
 
             ReservationIDTextBox.Visible = false;
             idlbl.Visible = false;
             ContactTextBox.Visible = false;
             contactlbl.Visible = false;
             generateButton.Visible = false;
-            totalPricelbl.Visible = true;
+            lblTotalPrice.Visible = true;
             btnSubmit.Visible = false;
         }
 
@@ -478,7 +488,7 @@ namespace BookMyCourt
             ContactTextBox.Visible = true;
             contactlbl.Visible = true;
             generateButton.Visible = true;
-            totalPricelbl.Visible = false;
+            lblTotalPrice.Visible = true;
             btnSubmit.Visible = true;
         }
 
@@ -491,26 +501,29 @@ namespace BookMyCourt
             }
         }
 
-        private void stp3BackButton_Click(object sender, EventArgs e)
-        {
-            ShowStep2();
-        }
-
-    
-
-        private void stp2BackButton_Click(object sender, EventArgs e)
-        {
-            ShowStep1();
-        }
 
         private void stp1NextButton_Click(object sender, EventArgs e)
         {
+            currentStep = 2;
             ShowStep2();
+        }
+
+        private void stp2BackButton_Click(object sender, EventArgs e)
+        {
+            currentStep = 1;
+            ShowStep1();
         }
 
         private void stp2NextButton_Click_1(object sender, EventArgs e)
         {
+            currentStep = 3;
             ShowStep3();
+        }
+
+        private void stp3BackButton_Click(object sender, EventArgs e)
+        {
+            currentStep = 2;
+            ShowStep2();
         }
 
         private void BookingPageControl_Load(object sender, EventArgs e)
