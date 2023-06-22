@@ -286,6 +286,23 @@ namespace BookMyCourt
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
+            string reservationId = ReservationIDTextBox.Text;
+            string contactNumber = ContactTextBox.Text;
+
+            // Check if the reservation ID is blank
+            if (string.IsNullOrWhiteSpace(reservationId))
+            {
+                MessageBox.Show("Reservation ID cannot be blank. Please generate a reservation ID.");
+                return; // Exit the event handler without proceeding
+            }
+
+            // Check if the contact number is blank
+            if (string.IsNullOrWhiteSpace(contactNumber))
+            {
+                MessageBox.Show("Contact number cannot be blank. Please enter a valid contact number.");
+                return; // Exit the event handler without proceeding
+            }
+
             string connectionString = @"Data Source=DESKTOP-JJULN80\SQLEXPRESS;Initial Catalog=DBbooking;Integrated Security=True";
             string query = "INSERT INTO Bookings (ReservationId, Contact#, Name, StartTime, EndTime, Date, RoomType, BedType, Price, EndDate) VALUES (@ReservationId, @Contact#, @Name, @StartTime, @EndTime, @Date, @RoomType, @BedType, @Price, @EndDate)";
 
@@ -411,6 +428,12 @@ namespace BookMyCourt
             generateButton.Visible = false;
             lblTotalPrice.Visible = false;
             btnSubmit.Visible = false;
+
+            // Subscribe to the TextChanged event of the hotel name textbox
+            nameTextBox.TextChanged += nameTextBox_TextChanged;
+
+            // Set the initial state of the next button
+            stp1NextButton.Enabled = false;
         }
 
         //bed type with picture
@@ -505,7 +528,13 @@ namespace BookMyCourt
         private void stp1NextButton_Click(object sender, EventArgs e)
         {
             currentStep = 2;
-            ShowStep2();
+            // Move to the next step only if the hotel name is not empty
+            if (!string.IsNullOrEmpty(nameTextBox.Text))
+            {
+                // Code to proceed to the next step
+                // For example, hide step 1 controls and show step 2 controls
+                ShowStep2();
+            }
         }
 
         private void stp2BackButton_Click(object sender, EventArgs e)
@@ -517,6 +546,12 @@ namespace BookMyCourt
         private void stp2NextButton_Click_1(object sender, EventArgs e)
         {
             currentStep = 3;
+            // Validate if a bed type is selected before proceeding
+            if (string.IsNullOrEmpty(cmbBedType.SelectedItem?.ToString()))
+            {
+                MessageBox.Show("Please select a bed type before proceeding.");
+                return;
+            }
             ShowStep3();
         }
 
@@ -558,5 +593,10 @@ namespace BookMyCourt
             }
         }
 
+        private void nameTextBox_TextChanged(object sender, EventArgs e)
+        {
+            // Enable or disable the next button based on the hotel name textbox value
+            stp1NextButton.Enabled = !string.IsNullOrEmpty(nameTextBox.Text);
+        }
     }
 }

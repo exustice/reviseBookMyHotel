@@ -179,6 +179,7 @@
             this.nameTextBox.TabIndex = 31;
             this.nameTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nameTextBox.Click += new System.EventHandler(this.nameTextBox_Click);
+            this.nameTextBox.TextChanged += new System.EventHandler(this.nameTextBox_TextChanged);
             // 
             // generateButton
             // 
