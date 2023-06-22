@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -361,17 +362,31 @@ namespace BookMyCourt
         //hotel name, start end date & time
         private void ShowStep1()
         {
+            stp1lbl.Visible = true;
+            stp2lbl.Visible = false; 
+            stp3lbl.Visible = false;
+
             nameTextBox.Visible = true;
             hotellbl.Visible = true;
             dtpStartTime.Visible = true;
-            dtpEndTime.Visible = true;
+            startTimelbl.Visible = true;
+            datePicker.Visible = true;
+            startDatelbl.Visible = true;
             dtpEndDate.Visible = true;
+            endDatelbl.Visible = true;
+            dtpEndTime.Visible = true;
+            endTimelbl.Visible = true;
+            stp1NextButton.Visible = true;
+            stp2NextButton.Visible = false;
+            stp2BackButton.Visible = false;
+            stp3BackButton.Visible = false;
+
             cmbRoomType.Visible = false;
             roomTypelbl.Visible = false;
             cmbBedType.Visible = false;
             bedTypelbl.Visible = false;
-            
-            
+
+
             ReservationIDTextBox.Visible = false;
             idlbl.Visible = false;
             ContactTextBox.Visible = false;
@@ -379,37 +394,79 @@ namespace BookMyCourt
             generateButton.Visible = false;
             totalPricelbl.Visible = false;
             btnSubmit.Visible = false;
-            datePicker.Visible = true;
-            
-
-            Button nextButton = new Button();
-            nextButton.Text = "Next";
-            nextButton.Click += NextButton_Click;
-
-            // Add the "Next" button to the bookingStepsPanel
-            
         }
 
         //bed type with picture
         private void ShowStep2()
         {
+            stp1lbl.Visible = false;
+            stp2lbl.Visible = true;
+            stp3lbl.Visible = false;
 
+            nameTextBox.Visible = false;
+            hotellbl.Visible = false;
+            dtpStartTime.Visible = false;
+            startTimelbl.Visible = false;
+            datePicker.Visible = false;
+            startDatelbl.Visible = false;
+            dtpEndDate.Visible = false;
+            endDatelbl.Visible = false;
+            dtpEndTime.Visible = false;
+            endTimelbl.Visible = false;
+            stp1NextButton.Visible = false;
+            stp2NextButton.Visible = true;
+            stp2BackButton.Visible = true;
+            stp3BackButton.Visible = false;
 
+            cmbRoomType.Visible = true;
+            roomTypelbl.Visible = true;
+            cmbBedType.Visible = true;
+            bedTypelbl.Visible = true;
+
+            ReservationIDTextBox.Visible = false;
+            idlbl.Visible = false;
+            ContactTextBox.Visible = false;
+            contactlbl.Visible = false;
+            generateButton.Visible = false;
+            totalPricelbl.Visible = false;
+            btnSubmit.Visible = false;
         }
 
         //reservation id and other contact details
-        private void ShowStep3() { 
-            
-        }
-
-        private void NextButton_Click(object sender, EventArgs e)
+        private void ShowStep3()
         {
-            ShowStep2();
-        }
+            stp1lbl.Visible = false;
+            stp2lbl.Visible = false;
+            stp3lbl.Visible = true;
 
-        private void BackButton_Click(object sender, EventArgs e)
-        {
-            ShowStep1();
+            nameTextBox.Visible = false;
+            hotellbl.Visible = false;
+            dtpStartTime.Visible = false;
+            startTimelbl.Visible = false;
+            datePicker.Visible = false;
+            startDatelbl.Visible = false;
+            dtpEndDate.Visible = false;
+            endDatelbl.Visible = false;
+            dtpEndTime.Visible = false;
+            endTimelbl.Visible = false;
+            stp1NextButton.Visible = false;
+            stp2NextButton.Visible = false;
+            stp2BackButton.Visible = false;
+            stp3BackButton.Visible = true;
+
+            cmbRoomType.Visible = false;
+            roomTypelbl.Visible = false;
+            cmbBedType.Visible = false;
+            bedTypelbl.Visible = false;
+
+
+            ReservationIDTextBox.Visible = true;
+            idlbl.Visible = true;
+            ContactTextBox.Visible = true;
+            contactlbl.Visible = true;
+            generateButton.Visible = true;
+            totalPricelbl.Visible = true;
+            btnSubmit.Visible = true;
         }
 
         private void nameTextBox_Click(object sender, EventArgs e)
@@ -419,6 +476,28 @@ namespace BookMyCourt
                 MessageBox.Show("You need to choose a hotel first from the Dashboard.");
                 nameTextBox.Focus();
             }
+        }
+
+        private void stp3BackButton_Click(object sender, EventArgs e)
+        {
+            ShowStep2();
+        }
+
+    
+
+        private void stp2BackButton_Click(object sender, EventArgs e)
+        {
+            ShowStep1();
+        }
+
+        private void stp1NextButton_Click(object sender, EventArgs e)
+        {
+            ShowStep2();
+        }
+
+        private void stp2NextButton_Click_1(object sender, EventArgs e)
+        {
+            ShowStep3();
         }
     }
 }

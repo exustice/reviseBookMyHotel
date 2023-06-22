@@ -34,7 +34,7 @@
             this.startTimelbl = new System.Windows.Forms.Label();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.ContactTextBox = new System.Windows.Forms.TextBox();
-            this.startlDatebl = new System.Windows.Forms.Label();
+            this.startDatelbl = new System.Windows.Forms.Label();
             this.dtpStartTime = new System.Windows.Forms.DateTimePicker();
             this.endTimelbl = new System.Windows.Forms.Label();
             this.dtpEndTime = new System.Windows.Forms.DateTimePicker();
@@ -51,9 +51,13 @@
             this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
             this.ReservationIDTextBox = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.NextButton = new System.Windows.Forms.Button();
-            this.BackButton = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.stp1NextButton = new System.Windows.Forms.Button();
+            this.stp2BackButton = new System.Windows.Forms.Button();
+            this.stp1lbl = new System.Windows.Forms.Label();
+            this.stp2NextButton = new System.Windows.Forms.Button();
+            this.stp3BackButton = new System.Windows.Forms.Button();
+            this.stp2lbl = new System.Windows.Forms.Label();
+            this.stp3lbl = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // idlbl
@@ -115,15 +119,15 @@
             this.ContactTextBox.TabIndex = 17;
             this.ContactTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ContactTextBox_KeyPress);
             // 
-            // startlDatebl
+            // startDatelbl
             // 
-            this.startlDatebl.AutoSize = true;
-            this.startlDatebl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.startlDatebl.Location = new System.Drawing.Point(74, 208);
-            this.startlDatebl.Name = "startlDatebl";
-            this.startlDatebl.Size = new System.Drawing.Size(83, 20);
-            this.startlDatebl.TabIndex = 22;
-            this.startlDatebl.Text = "Start Date";
+            this.startDatelbl.AutoSize = true;
+            this.startDatelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.startDatelbl.Location = new System.Drawing.Point(74, 208);
+            this.startDatelbl.Name = "startDatelbl";
+            this.startDatelbl.Size = new System.Drawing.Size(83, 20);
+            this.startDatelbl.TabIndex = 22;
+            this.startDatelbl.Text = "Start Date";
             // 
             // dtpStartTime
             // 
@@ -273,43 +277,90 @@
             this.label1.TabIndex = 45;
             this.label1.Text = "Booking Page";
             // 
-            // NextButton
+            // stp1NextButton
             // 
-            this.NextButton.Location = new System.Drawing.Point(631, 346);
-            this.NextButton.Name = "NextButton";
-            this.NextButton.Size = new System.Drawing.Size(134, 24);
-            this.NextButton.TabIndex = 46;
-            this.NextButton.Text = "NEXT";
-            this.NextButton.UseVisualStyleBackColor = true;
-            this.NextButton.Click += new System.EventHandler(this.NextButton_Click);
+            this.stp1NextButton.Location = new System.Drawing.Point(631, 346);
+            this.stp1NextButton.Name = "stp1NextButton";
+            this.stp1NextButton.Size = new System.Drawing.Size(134, 24);
+            this.stp1NextButton.TabIndex = 46;
+            this.stp1NextButton.Text = "NEXT";
+            this.stp1NextButton.UseVisualStyleBackColor = true;
+            this.stp1NextButton.Click += new System.EventHandler(this.stp1NextButton_Click);
             // 
-            // BackButton
+            // stp2BackButton
             // 
-            this.BackButton.Location = new System.Drawing.Point(32, 342);
-            this.BackButton.Name = "BackButton";
-            this.BackButton.Size = new System.Drawing.Size(134, 24);
-            this.BackButton.TabIndex = 47;
-            this.BackButton.Text = "BACK";
-            this.BackButton.UseVisualStyleBackColor = true;
-            this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
+            this.stp2BackButton.Location = new System.Drawing.Point(32, 342);
+            this.stp2BackButton.Name = "stp2BackButton";
+            this.stp2BackButton.Size = new System.Drawing.Size(134, 24);
+            this.stp2BackButton.TabIndex = 47;
+            this.stp2BackButton.Text = "BACK";
+            this.stp2BackButton.UseVisualStyleBackColor = true;
+            this.stp2BackButton.Visible = false;
+            this.stp2BackButton.Click += new System.EventHandler(this.stp2BackButton_Click);
             // 
-            // label2
+            // stp1lbl
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(171, 43);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(432, 31);
-            this.label2.TabIndex = 48;
-            this.label2.Text = "STEP 1 - CHOOSE YOUR HOTEL";
+            this.stp1lbl.AutoSize = true;
+            this.stp1lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stp1lbl.Location = new System.Drawing.Point(171, 43);
+            this.stp1lbl.Name = "stp1lbl";
+            this.stp1lbl.Size = new System.Drawing.Size(432, 31);
+            this.stp1lbl.TabIndex = 48;
+            this.stp1lbl.Text = "STEP 1 - CHOOSE YOUR HOTEL";
+            // 
+            // stp2NextButton
+            // 
+            this.stp2NextButton.Location = new System.Drawing.Point(631, 319);
+            this.stp2NextButton.Name = "stp2NextButton";
+            this.stp2NextButton.Size = new System.Drawing.Size(134, 24);
+            this.stp2NextButton.TabIndex = 49;
+            this.stp2NextButton.Text = "NEXT";
+            this.stp2NextButton.UseVisualStyleBackColor = true;
+            this.stp2NextButton.Visible = false;
+            this.stp2NextButton.Click += new System.EventHandler(this.stp2NextButton_Click_1);
+            // 
+            // stp3BackButton
+            // 
+            this.stp3BackButton.Location = new System.Drawing.Point(32, 342);
+            this.stp3BackButton.Name = "stp3BackButton";
+            this.stp3BackButton.Size = new System.Drawing.Size(134, 24);
+            this.stp3BackButton.TabIndex = 50;
+            this.stp3BackButton.Text = "BACK";
+            this.stp3BackButton.UseVisualStyleBackColor = true;
+            this.stp3BackButton.Visible = false;
+            this.stp3BackButton.Click += new System.EventHandler(this.stp3BackButton_Click);
+            // 
+            // stp2lbl
+            // 
+            this.stp2lbl.AutoSize = true;
+            this.stp2lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stp2lbl.Location = new System.Drawing.Point(73, 43);
+            this.stp2lbl.Name = "stp2lbl";
+            this.stp2lbl.Size = new System.Drawing.Size(631, 31);
+            this.stp2lbl.TabIndex = 51;
+            this.stp2lbl.Text = "STEP 2 - CHOOSE YOUR BED AND ROOM TYPE";
+            // 
+            // stp3lbl
+            // 
+            this.stp3lbl.AutoSize = true;
+            this.stp3lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stp3lbl.Location = new System.Drawing.Point(73, 43);
+            this.stp3lbl.Name = "stp3lbl";
+            this.stp3lbl.Size = new System.Drawing.Size(612, 31);
+            this.stp3lbl.TabIndex = 52;
+            this.stp3lbl.Text = "STEP 3 - FILL OUT YOUR PERSONAL DETAILS";
             // 
             // BookingPageControl
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(248)))), ((int)(((byte)(249)))));
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.BackButton);
-            this.Controls.Add(this.NextButton);
+            this.Controls.Add(this.stp3lbl);
+            this.Controls.Add(this.stp2lbl);
+            this.Controls.Add(this.stp3BackButton);
+            this.Controls.Add(this.stp2NextButton);
+            this.Controls.Add(this.stp1lbl);
+            this.Controls.Add(this.stp2BackButton);
+            this.Controls.Add(this.stp1NextButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ReservationIDTextBox);
             this.Controls.Add(this.dtpEndDate);
@@ -326,7 +377,7 @@
             this.Controls.Add(this.dtpEndTime);
             this.Controls.Add(this.endTimelbl);
             this.Controls.Add(this.dtpStartTime);
-            this.Controls.Add(this.startlDatebl);
+            this.Controls.Add(this.startDatelbl);
             this.Controls.Add(this.ContactTextBox);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.startTimelbl);
@@ -347,7 +398,7 @@
         private System.Windows.Forms.Label startTimelbl;
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.TextBox ContactTextBox;
-        private System.Windows.Forms.Label startlDatebl;
+        private System.Windows.Forms.Label startDatelbl;
         private System.Windows.Forms.DateTimePicker dtpStartTime;
         private System.Windows.Forms.Label endTimelbl;
         private System.Windows.Forms.DateTimePicker dtpEndTime;
@@ -364,8 +415,12 @@
         private System.Windows.Forms.DateTimePicker dtpEndDate;
         private System.Windows.Forms.Label ReservationIDTextBox;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button NextButton;
-        private System.Windows.Forms.Button BackButton;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button stp1NextButton;
+        private System.Windows.Forms.Button stp2BackButton;
+        private System.Windows.Forms.Label stp1lbl;
+        private System.Windows.Forms.Button stp2NextButton;
+        private System.Windows.Forms.Button stp3BackButton;
+        private System.Windows.Forms.Label stp2lbl;
+        private System.Windows.Forms.Label stp3lbl;
     }
 }
