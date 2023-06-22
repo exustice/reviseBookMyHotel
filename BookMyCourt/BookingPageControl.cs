@@ -23,6 +23,8 @@ namespace BookMyCourt
 
             datePicker.MinDate = DateTime.Today;
             dtpEndDate.MinDate = DateTime.Today;
+            nameTextBox.Click += nameTextBox_Click;
+
 
 
             // Set the time interval to 1 hour
@@ -49,6 +51,8 @@ namespace BookMyCourt
             // Handle SelectedIndexChanged event of cmbRoomType and cmbBedType
             cmbRoomType.SelectedIndexChanged += cmbRoomType_SelectedIndexChanged;
             cmbBedType.SelectedIndexChanged += cmbBedType_SelectedIndexChanged;
+
+            ShowStep1();
         }
 
 
@@ -351,6 +355,69 @@ namespace BookMyCourt
             {
                 MessageBox.Show("End date cannot be earlier than the start date. Please select a valid end date.");
                 dtpEndDate.Value = startDate;
+            }
+        }
+
+        //hotel name, start end date & time
+        private void ShowStep1()
+        {
+            nameTextBox.Visible = true;
+            hotellbl.Visible = true;
+            dtpStartTime.Visible = true;
+            dtpEndTime.Visible = true;
+            dtpEndDate.Visible = true;
+            cmbRoomType.Visible = false;
+            roomTypelbl.Visible = false;
+            cmbBedType.Visible = false;
+            bedTypelbl.Visible = false;
+            
+            
+            ReservationIDTextBox.Visible = false;
+            idlbl.Visible = false;
+            ContactTextBox.Visible = false;
+            contactlbl.Visible = false;
+            generateButton.Visible = false;
+            totalPricelbl.Visible = false;
+            btnSubmit.Visible = false;
+            datePicker.Visible = true;
+            
+
+            Button nextButton = new Button();
+            nextButton.Text = "Next";
+            nextButton.Click += NextButton_Click;
+
+            // Add the "Next" button to the bookingStepsPanel
+            
+        }
+
+        //bed type with picture
+        private void ShowStep2()
+        {
+
+
+        }
+
+        //reservation id and other contact details
+        private void ShowStep3() { 
+            
+        }
+
+        private void NextButton_Click(object sender, EventArgs e)
+        {
+            ShowStep2();
+        }
+
+        private void BackButton_Click(object sender, EventArgs e)
+        {
+            ShowStep1();
+        }
+
+        private void nameTextBox_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(nameTextBox.Text))
+            {
+                MessageBox.Show("You need to choose a hotel first from the Dashboard.");
+                nameTextBox.Focus();
             }
         }
     }

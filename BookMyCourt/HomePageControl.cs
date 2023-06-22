@@ -278,22 +278,29 @@ namespace BookMyCourt
             Button btnCheckHotel = (Button)sender; // Get the clicked button
             string hotelName = btnCheckHotel.Tag.ToString(); // Retrieve the hotel name from the button's tag
 
-            // Close the HomePageControl
-            this.Hide();
+            // Show a message box asking for confirmation
+            DialogResult result = MessageBox.Show("Do you want to book this hotel?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            // Create an instance of the BookingPageControl and pass the hotelName
-            BookingPageControl bookingPageControl = new BookingPageControl();
-            bookingPageControl.SetHotelName(hotelName);
+            if (result == DialogResult.Yes)
+            {
+                // Close the HomePageControl
+                this.Hide();
 
-            // Add the bookingPageControl to the controls of the main form
-            Parent.Controls.Add(bookingPageControl);
+                // Create an instance of the BookingPageControl and pass the hotelName
+                BookingPageControl bookingPageControl = new BookingPageControl();
+                bookingPageControl.SetHotelName(hotelName);
 
-            // Set the docking style of the bookingPageControl to fill the entire form
-            bookingPageControl.Dock = DockStyle.Fill;
+                // Add the bookingPageControl to the controls of the main form
+                Parent.Controls.Add(bookingPageControl);
 
-            // Show the bookingPageControl
-            bookingPageControl.Show();
+                // Set the docking style of the bookingPageControl to fill the entire form
+                bookingPageControl.Dock = DockStyle.Fill;
+
+                // Show the bookingPageControl
+                bookingPageControl.Show();
+            }
         }
+
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
