@@ -410,5 +410,17 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\economy.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\deluxe.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\grand.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\premium.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

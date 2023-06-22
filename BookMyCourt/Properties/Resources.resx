@@ -142,6 +142,9 @@
   <data name="1497619898-jd24_85173 (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1497619898-jd24_85173 (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="sti court1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sti court1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="logout icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logout icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -163,6 +166,9 @@
   <data name="insta1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\insta1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="back icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\back icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="add_blue_button_icon_227860" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\add_blue_button_icon_227860.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -171,9 +177,6 @@
   </data>
   <data name="1497619898-jd24_85173 (2)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1497619898-jd24_85173 (2)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="home icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\home icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="loggointeg2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\loggointeg2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -184,17 +187,11 @@
   <data name="1497619898-jd24_85173 (1)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1497619898-jd24_85173 (1)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="notification-bell3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\notification-bell3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="background3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\background3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="1497619898-jd24_851731" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1497619898-jd24_851731.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logoointeg1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logoointeg1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="notification-bell1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\notification-bell1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="paraiso court" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\paraiso court.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -205,20 +202,23 @@
   <data name="2021_Facebook_icon.svg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\2021_Facebook_icon.svg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="loggointeg22" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\loggointeg22.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="home icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\home icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="1497619898-jd24_85173 (1)2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1497619898-jd24_85173 (1)2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1497619898-jd24_851731" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1497619898-jd24_851731.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="sti court" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sti court.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="2021_Facebook_icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\2021_Facebook_icon.svg1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="back icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\back icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="notification-bell3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\notification-bell3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sti court" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sti court.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="twitter-logo-vector-png-clipart-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\twitter-logo-vector-png-clipart-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -229,8 +229,8 @@
   <data name="blue-notification-bell-icon-png1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\blue-notification-bell-icon-png1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="1497619898-jd24_85173 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1497619898-jd24_85173 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="notification-bell1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\notification-bell1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logoointeg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logoointeg.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -238,8 +238,11 @@
   <data name="icon list" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon list.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="sti court1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sti court1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="background3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\background3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1497619898-jd24_85173 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1497619898-jd24_85173 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="blue-notification-bell-icon-png3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\blue-notification-bell-icon-png3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -247,7 +250,16 @@
   <data name="home icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\home icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="loggointeg22" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\loggointeg22.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="economy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\economy.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="deluxe" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\deluxe.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="grand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\grand.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="premium" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\premium.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

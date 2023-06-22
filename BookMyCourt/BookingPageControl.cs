@@ -32,11 +32,16 @@ namespace BookMyCourt
             dtpStartTime.Format = DateTimePickerFormat.Custom;
             dtpStartTime.CustomFormat = "hh:mm tt";
             dtpStartTime.ShowUpDown = true;
+
+            // Set the initial value for dtpStartTime
             dtpStartTime.Value = DateTime.Today.AddHours(DateTime.Now.Hour).AddMinutes((DateTime.Now.Minute / 60.0) * 60);
 
+            // Set the time format for dtpEndTime
             dtpEndTime.Format = DateTimePickerFormat.Custom;
             dtpEndTime.CustomFormat = "hh:mm tt";
             dtpEndTime.ShowUpDown = true;
+
+            // Set the initial value for dtpEndTime (e.g., 1 hour after the current time)
             dtpEndTime.Value = DateTime.Today.AddHours(DateTime.Now.Hour + 1).AddMinutes((DateTime.Now.Minute / 60.0) * 60);
 
             dtpStartTime.ValueChanged += dtpStartTime_ValueChanged;
@@ -45,10 +50,11 @@ namespace BookMyCourt
 
             // Add items to cmbRoomType
             cmbRoomType.Items.AddRange(new string[] { "Economy", "Premium", "Deluxe", "Grand" });
-
+            cmbRoomType.DropDownStyle = ComboBoxStyle.DropDownList;
+            
             // Add items to cmbBedType
             cmbBedType.Items.AddRange(new string[] { "Single", "Double", "Queen", "Deck" });
-
+            cmbBedType.DropDownStyle = ComboBoxStyle.DropDownList;
             // Handle SelectedIndexChanged event of cmbRoomType and cmbBedType
             cmbRoomType.SelectedIndexChanged += cmbRoomType_SelectedIndexChanged;
             cmbBedType.SelectedIndexChanged += cmbBedType_SelectedIndexChanged;
@@ -365,6 +371,8 @@ namespace BookMyCourt
             stp1lbl.Visible = true;
             stp2lbl.Visible = false; 
             stp3lbl.Visible = false;
+            notelbl.Visible = true;
+            roomPic.Visible = false;
 
             nameTextBox.Visible = true;
             hotellbl.Visible = true;
@@ -402,6 +410,8 @@ namespace BookMyCourt
             stp1lbl.Visible = false;
             stp2lbl.Visible = true;
             stp3lbl.Visible = false;
+            notelbl.Visible = false;
+            roomPic.Visible = true;
 
             nameTextBox.Visible = false;
             hotellbl.Visible = false;
@@ -422,13 +432,14 @@ namespace BookMyCourt
             roomTypelbl.Visible = true;
             cmbBedType.Visible = true;
             bedTypelbl.Visible = true;
+            cmbRoomType.SelectedItem = "Premium"; // Set the room type to "Premium"
 
             ReservationIDTextBox.Visible = false;
             idlbl.Visible = false;
             ContactTextBox.Visible = false;
             contactlbl.Visible = false;
             generateButton.Visible = false;
-            totalPricelbl.Visible = false;
+            totalPricelbl.Visible = true;
             btnSubmit.Visible = false;
         }
 
@@ -438,6 +449,8 @@ namespace BookMyCourt
             stp1lbl.Visible = false;
             stp2lbl.Visible = false;
             stp3lbl.Visible = true;
+            notelbl.Visible = false;
+            roomPic.Visible = false;
 
             nameTextBox.Visible = false;
             hotellbl.Visible = false;
@@ -465,7 +478,7 @@ namespace BookMyCourt
             ContactTextBox.Visible = true;
             contactlbl.Visible = true;
             generateButton.Visible = true;
-            totalPricelbl.Visible = true;
+            totalPricelbl.Visible = false;
             btnSubmit.Visible = true;
         }
 
@@ -499,5 +512,38 @@ namespace BookMyCourt
         {
             ShowStep3();
         }
+
+        private void BookingPageControl_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbRoomType_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            string selectedRoomType = cmbRoomType.SelectedItem?.ToString();
+
+            // Set the corresponding image based on the selected room type
+            switch (selectedRoomType)
+            {
+                case "Economy":
+                    roomPic.Image = Properties.Resources.economy; // Assuming the image resource name is "economy"
+                    break;
+                case "Premium":
+                    roomPic.Image = Properties.Resources.premium; // Assuming the image resource name is "premium"
+                    break;
+                case "Deluxe":
+                    roomPic.Image = Properties.Resources.deluxe; // Assuming the image resource name is "deluxe"
+                    break;
+                case "Grand":
+                    roomPic.Image = Properties.Resources.grand; // Assuming the image resource name is "grand"
+                    break;
+                default:
+                    // Handle the default case when no room type is selected
+                    // You can set a default image or clear the picture box, depending on your requirement
+                    roomPic.Image = null; // Clear the picture box
+                    break;
+            }
+        }
+
     }
 }

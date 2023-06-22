@@ -58,6 +58,9 @@
             this.stp3BackButton = new System.Windows.Forms.Button();
             this.stp2lbl = new System.Windows.Forms.Label();
             this.stp3lbl = new System.Windows.Forms.Label();
+            this.notelbl = new System.Windows.Forms.Label();
+            this.roomPic = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.roomPic)).BeginInit();
             this.SuspendLayout();
             // 
             // idlbl
@@ -65,7 +68,7 @@
             this.idlbl.AutoSize = true;
             this.idlbl.CausesValidation = false;
             this.idlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idlbl.Location = new System.Drawing.Point(332, 107);
+            this.idlbl.Location = new System.Drawing.Point(-4, 127);
             this.idlbl.Name = "idlbl";
             this.idlbl.Size = new System.Drawing.Size(115, 20);
             this.idlbl.TabIndex = 1;
@@ -75,17 +78,17 @@
             // 
             this.contactlbl.AutoSize = true;
             this.contactlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.contactlbl.Location = new System.Drawing.Point(636, 105);
+            this.contactlbl.Location = new System.Drawing.Point(-5, 245);
             this.contactlbl.Name = "contactlbl";
-            this.contactlbl.Size = new System.Drawing.Size(74, 20);
+            this.contactlbl.Size = new System.Drawing.Size(125, 20);
             this.contactlbl.TabIndex = 3;
-            this.contactlbl.Text = "Contact#";
+            this.contactlbl.Text = "Contact Number";
             // 
             // hotellbl
             // 
             this.hotellbl.AutoSize = true;
             this.hotellbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.hotellbl.Location = new System.Drawing.Point(64, 107);
+            this.hotellbl.Location = new System.Drawing.Point(334, 127);
             this.hotellbl.Name = "hotellbl";
             this.hotellbl.Size = new System.Drawing.Size(93, 20);
             this.hotellbl.TabIndex = 4;
@@ -95,7 +98,7 @@
             // 
             this.startTimelbl.AutoSize = true;
             this.startTimelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.startTimelbl.Location = new System.Drawing.Point(349, 197);
+            this.startTimelbl.Location = new System.Drawing.Point(257, 300);
             this.startTimelbl.Name = "startTimelbl";
             this.startTimelbl.Size = new System.Drawing.Size(78, 20);
             this.startTimelbl.TabIndex = 6;
@@ -113,7 +116,7 @@
             // 
             // ContactTextBox
             // 
-            this.ContactTextBox.Location = new System.Drawing.Point(595, 82);
+            this.ContactTextBox.Location = new System.Drawing.Point(-1, 208);
             this.ContactTextBox.Name = "ContactTextBox";
             this.ContactTextBox.Size = new System.Drawing.Size(160, 20);
             this.ContactTextBox.TabIndex = 17;
@@ -123,7 +126,7 @@
             // 
             this.startDatelbl.AutoSize = true;
             this.startDatelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.startDatelbl.Location = new System.Drawing.Point(74, 208);
+            this.startDatelbl.Location = new System.Drawing.Point(337, 184);
             this.startDatelbl.Name = "startDatelbl";
             this.startDatelbl.Size = new System.Drawing.Size(83, 20);
             this.startDatelbl.TabIndex = 22;
@@ -132,18 +135,19 @@
             // dtpStartTime
             // 
             this.dtpStartTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpStartTime.Location = new System.Drawing.Point(308, 171);
+            this.dtpStartTime.Location = new System.Drawing.Point(217, 274);
             this.dtpStartTime.Name = "dtpStartTime";
             this.dtpStartTime.ShowUpDown = true;
             this.dtpStartTime.Size = new System.Drawing.Size(160, 20);
             this.dtpStartTime.TabIndex = 25;
+            this.dtpStartTime.Value = new System.DateTime(2023, 6, 22, 9, 8, 0, 0);
             this.dtpStartTime.ValueChanged += new System.EventHandler(this.dtpStartTime_ValueChanged);
             // 
             // endTimelbl
             // 
             this.endTimelbl.AutoSize = true;
             this.endTimelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.endTimelbl.Location = new System.Drawing.Point(636, 197);
+            this.endTimelbl.Location = new System.Drawing.Point(454, 300);
             this.endTimelbl.Name = "endTimelbl";
             this.endTimelbl.Size = new System.Drawing.Size(72, 20);
             this.endTimelbl.TabIndex = 27;
@@ -152,7 +156,7 @@
             // dtpEndTime
             // 
             this.dtpEndTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpEndTime.Location = new System.Drawing.Point(593, 171);
+            this.dtpEndTime.Location = new System.Drawing.Point(405, 274);
             this.dtpEndTime.Name = "dtpEndTime";
             this.dtpEndTime.ShowUpDown = true;
             this.dtpEndTime.Size = new System.Drawing.Size(172, 20);
@@ -161,14 +165,14 @@
             // 
             // datePicker
             // 
-            this.datePicker.Location = new System.Drawing.Point(32, 182);
+            this.datePicker.Location = new System.Drawing.Point(285, 162);
             this.datePicker.Name = "datePicker";
-            this.datePicker.Size = new System.Drawing.Size(172, 20);
+            this.datePicker.Size = new System.Drawing.Size(192, 20);
             this.datePicker.TabIndex = 29;
             // 
             // nameTextBox
             // 
-            this.nameTextBox.Location = new System.Drawing.Point(32, 84);
+            this.nameTextBox.Location = new System.Drawing.Point(261, 107);
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.ReadOnly = true;
             this.nameTextBox.Size = new System.Drawing.Size(255, 20);
@@ -177,7 +181,7 @@
             // 
             // generateButton
             // 
-            this.generateButton.Location = new System.Drawing.Point(473, 82);
+            this.generateButton.Location = new System.Drawing.Point(0, 163);
             this.generateButton.Name = "generateButton";
             this.generateButton.Size = new System.Drawing.Size(73, 23);
             this.generateButton.TabIndex = 32;
@@ -189,7 +193,7 @@
             // 
             this.roomTypelbl.AutoSize = true;
             this.roomTypelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.roomTypelbl.Location = new System.Drawing.Point(347, 285);
+            this.roomTypelbl.Location = new System.Drawing.Point(351, 245);
             this.roomTypelbl.Name = "roomTypelbl";
             this.roomTypelbl.Size = new System.Drawing.Size(90, 20);
             this.roomTypelbl.TabIndex = 33;
@@ -199,7 +203,7 @@
             // 
             this.bedTypelbl.AutoSize = true;
             this.bedTypelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bedTypelbl.Location = new System.Drawing.Point(635, 285);
+            this.bedTypelbl.Location = new System.Drawing.Point(351, 297);
             this.bedTypelbl.Name = "bedTypelbl";
             this.bedTypelbl.Size = new System.Drawing.Size(76, 20);
             this.bedTypelbl.TabIndex = 35;
@@ -209,7 +213,7 @@
             // 
             this.totalPricelbl.AutoSize = true;
             this.totalPricelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalPricelbl.Location = new System.Drawing.Point(490, 197);
+            this.totalPricelbl.Location = new System.Drawing.Point(555, 300);
             this.totalPricelbl.Name = "totalPricelbl";
             this.totalPricelbl.Size = new System.Drawing.Size(87, 20);
             this.totalPricelbl.TabIndex = 37;
@@ -227,15 +231,16 @@
             // cmbRoomType
             // 
             this.cmbRoomType.FormattingEnabled = true;
-            this.cmbRoomType.Location = new System.Drawing.Point(308, 261);
+            this.cmbRoomType.Location = new System.Drawing.Point(308, 221);
             this.cmbRoomType.Name = "cmbRoomType";
             this.cmbRoomType.Size = new System.Drawing.Size(169, 21);
             this.cmbRoomType.TabIndex = 39;
+            this.cmbRoomType.SelectedIndexChanged += new System.EventHandler(this.cmbRoomType_SelectedIndexChanged_1);
             // 
             // cmbBedType
             // 
             this.cmbBedType.FormattingEnabled = true;
-            this.cmbBedType.Location = new System.Drawing.Point(596, 261);
+            this.cmbBedType.Location = new System.Drawing.Point(308, 273);
             this.cmbBedType.Name = "cmbBedType";
             this.cmbBedType.Size = new System.Drawing.Size(169, 21);
             this.cmbBedType.TabIndex = 40;
@@ -244,7 +249,7 @@
             // 
             this.endDatelbl.AutoSize = true;
             this.endDatelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.endDatelbl.Location = new System.Drawing.Point(75, 288);
+            this.endDatelbl.Location = new System.Drawing.Point(342, 231);
             this.endDatelbl.Name = "endDatelbl";
             this.endDatelbl.Size = new System.Drawing.Size(77, 20);
             this.endDatelbl.TabIndex = 42;
@@ -252,9 +257,9 @@
             // 
             // dtpEndDate
             // 
-            this.dtpEndDate.Location = new System.Drawing.Point(32, 262);
+            this.dtpEndDate.Location = new System.Drawing.Point(285, 208);
             this.dtpEndDate.Name = "dtpEndDate";
-            this.dtpEndDate.Size = new System.Drawing.Size(172, 20);
+            this.dtpEndDate.Size = new System.Drawing.Size(192, 20);
             this.dtpEndDate.TabIndex = 43;
             this.dtpEndDate.ValueChanged += new System.EventHandler(this.dtpEndDate1);
             // 
@@ -262,7 +267,7 @@
             // 
             this.ReservationIDTextBox.BackColor = System.Drawing.Color.White;
             this.ReservationIDTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ReservationIDTextBox.Location = new System.Drawing.Point(308, 78);
+            this.ReservationIDTextBox.Location = new System.Drawing.Point(0, 101);
             this.ReservationIDTextBox.Name = "ReservationIDTextBox";
             this.ReservationIDTextBox.Size = new System.Drawing.Size(159, 24);
             this.ReservationIDTextBox.TabIndex = 44;
@@ -310,7 +315,7 @@
             // 
             // stp2NextButton
             // 
-            this.stp2NextButton.Location = new System.Drawing.Point(631, 319);
+            this.stp2NextButton.Location = new System.Drawing.Point(631, 342);
             this.stp2NextButton.Name = "stp2NextButton";
             this.stp2NextButton.Size = new System.Drawing.Size(134, 24);
             this.stp2NextButton.TabIndex = 49;
@@ -338,22 +343,49 @@
             this.stp2lbl.Name = "stp2lbl";
             this.stp2lbl.Size = new System.Drawing.Size(631, 31);
             this.stp2lbl.TabIndex = 51;
-            this.stp2lbl.Text = "STEP 2 - CHOOSE YOUR BED AND ROOM TYPE";
+            this.stp2lbl.Text = "STEP 2 - CHOOSE YOUR ROOM AND BED TYPE";
             // 
             // stp3lbl
             // 
             this.stp3lbl.AutoSize = true;
             this.stp3lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.stp3lbl.Location = new System.Drawing.Point(73, 43);
+            this.stp3lbl.Location = new System.Drawing.Point(73, 48);
             this.stp3lbl.Name = "stp3lbl";
             this.stp3lbl.Size = new System.Drawing.Size(612, 31);
             this.stp3lbl.TabIndex = 52;
             this.stp3lbl.Text = "STEP 3 - FILL OUT YOUR PERSONAL DETAILS";
             // 
+            // notelbl
+            // 
+            this.notelbl.AutoSize = true;
+            this.notelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.notelbl.ForeColor = System.Drawing.Color.Red;
+            this.notelbl.Location = new System.Drawing.Point(239, 325);
+            this.notelbl.Name = "notelbl";
+            this.notelbl.Size = new System.Drawing.Size(314, 13);
+            this.notelbl.TabIndex = 53;
+            this.notelbl.Text = "Note: We only accept sharp hourly basis e.g., 1:00PM - 10:00AM";
+            // 
+            // roomPic
+            // 
+            this.roomPic.Image = global::BookMyCourt.Properties.Resources.premium;
+            this.roomPic.Location = new System.Drawing.Point(235, 82);
+            this.roomPic.Name = "roomPic";
+            this.roomPic.Size = new System.Drawing.Size(342, 135);
+            this.roomPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.roomPic.TabIndex = 54;
+            this.roomPic.TabStop = false;
+            // 
             // BookingPageControl
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(248)))), ((int)(((byte)(249)))));
+            this.Controls.Add(this.contactlbl);
+            this.Controls.Add(this.ContactTextBox);
+            this.Controls.Add(this.generateButton);
+            this.Controls.Add(this.idlbl);
+            this.Controls.Add(this.ReservationIDTextBox);
+            this.Controls.Add(this.notelbl);
             this.Controls.Add(this.stp3lbl);
             this.Controls.Add(this.stp2lbl);
             this.Controls.Add(this.stp3BackButton);
@@ -362,7 +394,6 @@
             this.Controls.Add(this.stp2BackButton);
             this.Controls.Add(this.stp1NextButton);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.ReservationIDTextBox);
             this.Controls.Add(this.dtpEndDate);
             this.Controls.Add(this.endDatelbl);
             this.Controls.Add(this.cmbBedType);
@@ -371,21 +402,20 @@
             this.Controls.Add(this.totalPricelbl);
             this.Controls.Add(this.bedTypelbl);
             this.Controls.Add(this.roomTypelbl);
-            this.Controls.Add(this.generateButton);
             this.Controls.Add(this.nameTextBox);
             this.Controls.Add(this.datePicker);
             this.Controls.Add(this.dtpEndTime);
             this.Controls.Add(this.endTimelbl);
             this.Controls.Add(this.dtpStartTime);
             this.Controls.Add(this.startDatelbl);
-            this.Controls.Add(this.ContactTextBox);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.startTimelbl);
             this.Controls.Add(this.hotellbl);
-            this.Controls.Add(this.contactlbl);
-            this.Controls.Add(this.idlbl);
+            this.Controls.Add(this.roomPic);
             this.Name = "BookingPageControl";
             this.Size = new System.Drawing.Size(817, 397);
+            this.Load += new System.EventHandler(this.BookingPageControl_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.roomPic)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -422,5 +452,7 @@
         private System.Windows.Forms.Button stp3BackButton;
         private System.Windows.Forms.Label stp2lbl;
         private System.Windows.Forms.Label stp3lbl;
+        private System.Windows.Forms.Label notelbl;
+        private System.Windows.Forms.PictureBox roomPic;
     }
 }
